@@ -53,9 +53,11 @@ jobs:
                   
                   # Count fields
                   fields_count = 0
+                  field_names = []
                   meta = template.get('metadata', {})
                   if isinstance(meta, dict):
                       fields_count = len(meta)
+                      field_names = list(meta.keys())
                       
                   # Create index entry
                   entry = {
@@ -68,7 +70,8 @@ jobs:
                       'tags': tags,
                       'author': author,
                       'version': version,
-                      'fieldsCount': fields_count
+                      'fieldsCount': fields_count,
+                      'fields': field_names
                   }
                   index_data.append(entry)
                   print(f'Processed: {filepath}')
