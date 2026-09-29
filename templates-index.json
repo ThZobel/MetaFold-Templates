@@ -9,11 +9,23 @@
     "tags": [],
     "author": "Unknown",
     "version": "1.0.0",
-    "fieldsCount": 3,
+    "fieldsCount": 15,
     "fields": [
-      "fields",
-      "fieldOrder",
-      "totalFields"
+      "Test_Group",
+      "field_text",
+      "field_textarea",
+      "field_number",
+      "field_date",
+      "field_time",
+      "field_email",
+      "field_url",
+      "field_rating",
+      "field_dropdown",
+      "field_checkbox",
+      "field_multicheckbox",
+      "field_tags",
+      "field_id_anchor",
+      "field_derived_from"
     ]
   }
 ]

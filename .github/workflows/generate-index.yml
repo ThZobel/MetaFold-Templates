@@ -55,9 +55,11 @@ jobs:
                   fields_count = 0
                   field_names = []
                   meta = template.get('metadata', {})
-                  if isinstance(meta, dict):
-                      fields_count = len(meta)
-                      field_names = list(meta.keys())
+                  meta_fields = meta.get('fields', {}) if isinstance(meta, dict) else {}
+                  
+                  if isinstance(meta_fields, dict):
+                      fields_count = len(meta_fields)
+                      field_names = list(meta_fields.keys())
                       
                   # Create index entry
                   entry = {
