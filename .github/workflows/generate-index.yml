@@ -1,0 +1,91 @@
+name: Generate Templates Index
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.json'
+      - '!templates-index.json'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Need permission to push back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Generate Index JSON
+        run: |
+          python3 -c "
+          import os, json, glob
+          
+          index_data = []
+          
+          # Find all json files except the index itself
+          for filepath in glob.glob('**/*.json', recursive=True):
+              if filepath.endswith('templates-index.json') or filepath.startswith('.') or 'node_modules' in filepath:
+                  continue
+                  
+              try:
+                  with open(filepath, 'r', encoding='utf-8') as f:
+                      template = json.load(f)
+                      
+                  # Extract metadata
+                  name = template.get('name', os.path.basename(filepath))
+                  desc = template.get('description', '')
+                  tmpl_type = template.get('type', 'experiment')
+                  category = template.get('category', 'Uncategorized')
+                  tags = template.get('tags', [])
+                  author = template.get('author', 'Unknown')
+                  version = template.get('version', '1.0.0')
+                  
+                  # Count fields
+                  fields_count = 0
+                  meta = template.get('metadata', {})
+                  if isinstance(meta, dict):
+                      fields_count = len(meta)
+                      
+                  # Create index entry
+                  entry = {
+                      'id': filepath.replace(os.sep, '/'),
+                      'path': filepath.replace(os.sep, '/'),
+                      'name': name,
+                      'description': desc,
+                      'type': tmpl_type,
+                      'category': category,
+                      'tags': tags,
+                      'author': author,
+                      'version': version,
+                      'fieldsCount': fields_count
+                  }
+                  index_data.append(entry)
+                  print(f'Processed: {filepath}')
+                  
+              except Exception as e:
+                  print(f'Error processing {filepath}: {e}')
+                  
+          # Save index
+          with open('templates-index.json', 'w', encoding='utf-8') as f:
+              json.dump(index_data, f, indent=2, ensure_ascii=False)
+              
+          print(f'Generated index with {len(index_data)} templates.')
+          "
+
+      - name: Commit and Push Index
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add templates-index.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-update templates-index.json" && git push)
