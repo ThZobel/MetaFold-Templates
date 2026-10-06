@@ -1,7 +1,7 @@
 [
   {
-    "id": "General/zeiss_lsm980_rdm4mic_import_test.json",
-    "path": "General/zeiss_lsm980_rdm4mic_import_test.json",
+    "id": "General/zeiss_lsm980_rdm4mic_import_test2.json",
+    "path": "General/zeiss_lsm980_rdm4mic_import_test2.json",
     "name": "Zeiss Lsm980 Rdm4mic Import Test",
     "description": "Professional microscopy experiment template with comprehensive metadata fields",
     "type": "experiment",
