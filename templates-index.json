@@ -1,5 +1,38 @@
 [
   {
+    "id": "General/zeiss_lsm980_rdm4mic_import_test.json",
+    "path": "General/zeiss_lsm980_rdm4mic_import_test.json",
+    "name": "Zeiss Lsm980 Rdm4mic Import Test",
+    "description": "Professional microscopy experiment template with comprehensive metadata fields",
+    "type": "experiment",
+    "category": "category3",
+    "tags": [],
+    "author": "Unknown",
+    "version": "1.0.0",
+    "fieldsCount": 19,
+    "fields": [
+      "Test",
+      "Microscopy_group",
+      "mode",
+      "laser_lines",
+      "Biological Sample_group",
+      "stage",
+      "dyes",
+      "fluorescent_proteins",
+      "organism",
+      "Strain",
+      "Strain URL",
+      "cell_type",
+      "organism_part",
+      "fixation",
+      "sample_type",
+      "sample_description",
+      "imaging_purpose",
+      "qwer_ID",
+      "derived_from"
+    ]
+  },
+  {
     "id": "General/all_fields_template.json",
     "path": "General/all_fields_template.json",
     "name": "All Fields Template",
