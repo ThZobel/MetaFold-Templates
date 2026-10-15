@@ -60,5 +60,39 @@
       "field_id_anchor",
       "field_derived_from"
     ]
+  },
+  {
+    "id": "General/leica_stellaris.json",
+    "path": "General/leica_stellaris.json",
+    "name": "Leica Stellaris",
+    "description": "Template for Leica Stellaris System",
+    "type": "experiment",
+    "category": "category3",
+    "tags": [
+      "Leica",
+      "FLIM"
+    ],
+    "author": "Thomas Zobel",
+    "version": "1.0.0",
+    "fieldsCount": 17,
+    "fields": [
+      "Microscopy_group",
+      "mode",
+      "laser_lines",
+      "Biological Sample_group",
+      "dyes",
+      "fluorescent_proteins",
+      "organism",
+      "Strain",
+      "Strain URL",
+      "cell_type",
+      "organism_part",
+      "fixation",
+      "sample_type",
+      "sample_description",
+      "imaging_purpose",
+      "qwer_ID",
+      "derived_from"
+    ]
   }
 ]
