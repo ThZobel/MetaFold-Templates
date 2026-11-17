@@ -1,15 +1,36 @@
 {
+  "schemaVersion": "0.1",
+  "schemaType": "metafold-template",
   "name": "All Fields Template",
   "description": "A template containing every available field type in MetaFold",
   "type": "experiment",
   "category": "category1",
-  "structure": "",
+  "structure": "[User Name]/\n  [Project Name]/\n    Tags_[Tags Field]/",
   "createdBy": "Admin",
-  "createdByGroup": "Admin",
+  "createdByGroup": "System",
   "createdAt": "2026-08-07T12:00:00.000Z",
   "options": {
     "writeFilesOnly": false,
     "multipleFolders": false
+  },
+  "community": {
+    "category": "Experiments",
+    "type": "experiments",
+    "collection": "General",
+    "proposedCollection": null,
+    "tags": [
+      "System"
+    ],
+    "author": "Thomas Zobel",
+    "institution": "Münster Imaging Network",
+    "orcid": "",
+    "version": "1.0.0",
+    "license": "CC0-1.0",
+    "system": "",
+    "discipline": "",
+    "organism": "",
+    "description": "A template containing every available field type in MetaFold",
+    "path": "General/all_fields_template.json"
   },
   "integrations": {
     "elabftw": {
@@ -19,156 +40,159 @@
   },
   "projectDefaults": {
     "basePath": "D:\\Projects",
-    "projectName": "json_example",
+    "projectName": "electron_test",
     "targetPath": "D:\\Projects"
   },
   "metadata": {
     "fields": {
-      "Test_Group": {
+      "Notes": {
+        "type": "notes",
+        "label": "Notes",
+        "value": "",
+        "required": false,
+        "position": 1
+      },
+      "Test Group for Fields_group": {
         "type": "group",
         "label": "Test Group for Fields",
-        "position": 1
+        "position": 2
       },
       "field_text": {
         "type": "text",
         "label": "Text Field",
         "value": "",
         "required": false,
-        "position": 2,
-        "description": "A standard text input",
-        "defaultValue": ""
+        "position": 3,
+        "description": "A standard text input"
       },
       "field_textarea": {
         "type": "textarea",
         "label": "Textarea Field",
         "value": "",
         "required": false,
-        "position": 3,
-        "description": "A multi-line text input",
-        "defaultValue": ""
+        "position": 4,
+        "description": "A multi-line text input"
       },
       "field_number": {
         "type": "number",
         "label": "Number Field",
-        "value": "",
+        "value": 0,
         "required": false,
-        "position": 4,
+        "position": 5,
         "description": "A numeric input",
-        "defaultValue": ""
+        "min": 0,
+        "max": 100,
+        "unit": "µl"
       },
       "field_date": {
         "type": "date",
         "label": "Date Field",
         "value": "",
         "required": false,
-        "position": 5,
-        "description": "A date picker",
-        "defaultValue": ""
+        "position": 6,
+        "description": "A date picker"
       },
       "field_time": {
         "type": "time",
         "label": "Time Field",
         "value": "",
         "required": false,
-        "position": 6,
-        "description": "A time picker",
-        "defaultValue": ""
+        "position": 7,
+        "description": "A time picker"
       },
       "field_email": {
         "type": "email",
         "label": "Email Field",
         "value": "",
         "required": false,
-        "position": 7,
-        "description": "An email input",
-        "defaultValue": ""
+        "position": 8,
+        "description": "An email input"
       },
       "field_url": {
         "type": "url",
         "label": "URL Field",
         "value": "",
         "required": false,
-        "position": 8,
-        "description": "A URL input",
-        "defaultValue": ""
+        "position": 9,
+        "description": "A URL input"
       },
       "field_rating": {
         "type": "rating",
         "label": "Rating Field",
-        "value": 3,
+        "value": 0,
         "required": false,
-        "position": 9,
-        "description": "A 5-star rating input",
-        "defaultValue": 3,
-        "useForFilename": true
+        "position": 10,
+        "description": "A 5-star rating input"
       },
       "field_dropdown": {
         "type": "dropdown",
         "label": "Dropdown Field",
         "value": "",
         "required": false,
-        "position": 10,
+        "position": 11,
         "description": "A single-select dropdown",
         "options": [
           "Option 1",
           "Option 2",
           "Option 3"
-        ],
-        "defaultValue": "Option 1"
+        ]
       },
       "field_checkbox": {
         "type": "checkbox",
         "label": "Checkbox Field",
         "value": false,
         "required": false,
-        "position": 11,
-        "description": "A single boolean checkbox",
-        "defaultValue": false
+        "position": 12,
+        "description": "A single boolean checkbox"
       },
       "field_multicheckbox": {
         "type": "multicheckbox",
         "label": "Multi-Checkbox Field",
         "value": [],
         "required": false,
-        "position": 12,
+        "position": 13,
         "description": "Multiple checkboxes",
         "options": [
           "Choice A",
           "Choice B",
           "Choice C"
-        ],
-        "defaultValue": []
+        ]
       },
       "field_tags": {
         "type": "tags",
         "label": "Tags Field",
         "value": [],
         "required": false,
-        "position": 13,
-        "description": "A field for entering tags",
-        "defaultValue": []
+        "position": 14,
+        "description": "A field for entering tags"
       },
       "field_id_anchor": {
         "type": "id_anchor",
         "label": "ID Anchor Field",
         "value": "",
         "required": false,
-        "position": 14,
-        "description": "An ID anchor for knowledge graphs",
-        "defaultValue": ""
+        "position": 15,
+        "description": "An ID anchor for knowledge graphs"
       },
-      "field_derived_from": {
+      "derived_from": {
         "type": "derived_from",
         "label": "Derived From Field",
         "value": "",
         "required": false,
-        "position": 15,
-        "description": "Links to an existing ID anchor",
-        "defaultValue": []
+        "position": 16,
+        "description": "Links to an existing ID anchor"
+      },
+      "related_to": {
+        "type": "related_to",
+        "label": "related_to",
+        "value": "",
+        "required": false,
+        "position": 17
       }
     },
     "fieldOrder": [
-      "Test_Group",
+      "Notes",
+      "Test Group for Fields_group",
       "field_text",
       "field_textarea",
       "field_number",
@@ -182,31 +206,18 @@
       "field_multicheckbox",
       "field_tags",
       "field_id_anchor",
-      "field_derived_from"
+      "derived_from",
+      "related_to"
     ],
-    "totalFields": 15
+    "totalFields": 17
   },
-  "id": "template_all_fields_test_01",
-  "fileBasedNaming": true,
-  "nameSource": "filename",
-  "originalCreator": "Admin",
-  "originalGroup": "System",
-  "updatedAt": "2026-09-08T14:33:32.664Z",
-  "_fileInfo": {
-    "filename": "all_fields_template.json",
-    "filePath": "C:\\Users\\Thomas\\MetaFold\\Templates\\Admin\\Admin\\all_fields_template.json",
-    "savedAt": "2026-09-08T14:33:32.664Z",
-    "source": "file",
-    "directory": "C:\\Users\\Thomas\\MetaFold\\Templates\\Admin\\Admin",
-    "stable": true,
-    "version": "2.0",
-    "isUpdate": true
-  },
+  "updatedAt": "2026-11-17T13:02:04.469Z",
   "originalName": "All Fields Template",
   "sourceFilename": "all_fields_template.json",
-  "lastFileUpdate": "2026-09-08T14:11:53.485Z",
-  "savedLocally": true,
-  "storageType": "file",
-  "storageDisplay": "Saved as file",
-  "storageIcon": "📁"
+  "fileBasedNaming": true,
+  "nameSource": "filename",
+  "lastFileUpdate": "2026-11-17T13:02:04.482Z",
+  "isOwn": true,
+  "isShared": false,
+  "path": "General/all_fields_template.json"
 }
